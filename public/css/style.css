@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;1,700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+
+:root {
+    --darkBlue: #1E2140;
+    --darkerBlue: #121325;
+    --salmom: #F77070;
+    --gray: #D5DEFE;
+    --blueGray:#797c9b;
+    --left:8px;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--darkBlue);
+}
+
+#pomodoro {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#pomodoro h2 {
+    font-size: 1.5rem;
+    color: var(--gray);
+}
+
+#pomodoro ul {
+    width: 376px;
+    margin: 0 auto;
+    --left: 8px;
+    display: flex;
+    padding: 0.5rem;
+    border-radius: 35px;
+    text-align: center;
+    margin-top: 55px;
+    background-color: #00000050;
+    position: relative;
+}
+
+#pomodoro ul:after{
+    content: '';
+    width: 120px;
+    height: 48px;
+    position: absolute;
+    top: 8px;
+    left: var(--left);
+    border-radius: 35px;
+    background-color: var(--salmom);
+    transition-duration: 0.5s;
+}
+
+#pomodoro ul li {
+    width: 120px;
+    line-height: 48px;
+    text-align: center;
+    color: var(--gray);
+    opacity: .7;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+}
+
+#pomodoro ul li.active {
+    color: var(--darkBlue);
+    opacity: 1;
+}
+/* ---------------------------------------------------------------------------------- */
+
+#pomodoro .relogio {
+    margin-top: 45px;
+    width: 410px;
+    height: 410px;
+    border-radius: 100%;
+    background-color: #00000050;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#pomodoro .relogio #hora {
+    display: flex;
+    flex-direction: column;
+    font-size: 75px;
+    font-weight: bold;
+    color: var(--gray);
+    position: relative;
+}
+
+#pomodoro .relogio #state {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    position: absolute;
+    top: calc(100% + 30px);
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+#pomodoro .relogio #state:hover {
+    color: var(--salmom);
+}
+
+#pomodor .relogio #segundos {
+    width: 380px;
+    height: 380px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    border: 1px solid #ffffff;
+}
