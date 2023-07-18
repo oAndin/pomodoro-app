@@ -15,11 +15,31 @@
         <li>Long Break</li>
       </ul>
       <div class="relogio">
-        <canvas id="segundos"></canvas>
+        <!-- <canvas id="segundos"></canvas> -->
         <h1 id="hora">00:00 <span id="state">Start</span></h1>
       </div>
-    
+      <box-icon id="settings" type='solid' name='cog'></box-icon>
     </section>
+    <div class="configs">
+      <h3>Configurações<box-icon name="x" id="fecharSettings"></box-icon></h3>
+      <h6>Tempos (Minutos)</h6>
+      <div class="tempos">
+        <div class="tempo">
+          <span>Pomodoro</span>
+          <input type="number" id="pomodoroTime" min="1" max="60">
+        </div>
+        <div class="tempo">
+          <span>Short break</span>
+          <input type="number" id="shortTime" min="1" max="60">
+        </div>
+        <div class="tempo">
+          <span>Long break</span>
+          <input type="number" id="longTime" min="1" max="60">
+        </div>
+      </div>
+      <button id="confirm">Confirm</button>
+    </div>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="./public/js/script.js"></script>
   </body>
 </html>

@@ -12,18 +12,23 @@
 
 
 :root {
+    --primary:#bfc4d9;
     --darkBlue: #1E2140;
     --darkerBlue: #121325;
     --salmom: #F77070;
     --gray: #D5DEFE;
-    --blueGray:#797c9b;
-    --left:8px;
+    --blueGray: #797c9b;
+    --left: 8px;
 }
 
-body{
+body {
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
     background-color: var(--darkBlue);
+}
+
+#pomodoro {
+    padding: 60px 0;
 }
 
 #pomodoro {
@@ -53,7 +58,7 @@ body{
     position: relative;
 }
 
-#pomodoro ul:after{
+#pomodoro ul:after {
     content: '';
     width: 120px;
     height: 48px;
@@ -80,6 +85,7 @@ body{
     color: var(--darkBlue);
     opacity: 1;
 }
+
 /* ---------------------------------------------------------------------------------- */
 
 #pomodoro .relogio {
@@ -126,4 +132,114 @@ body{
     left: 50%;
     transform: translate(-50%, 50%);
     border: 1px solid #ffffff;
+}
+
+#pomodoro #settings {
+    width: 60px;
+    height: 60px;
+    padding: 8px;
+    margin: 60px auto 0 auto;
+    display: block;
+    fill: var(--gray);
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+#pomodoro #settings:hover {
+    fill: var(--salmom);
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+.configs {
+    width: 450px;
+    /* height: 450px; */
+    border-radius: 20px;
+    background-color: #fff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s ease-in-out;
+}
+
+.configs.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.configs h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 36px;
+    border-bottom: 1px solid var(--gray);
+    cursor: pointer;
+}
+
+.configs h3 box-icon {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    border-radius: 50%;
+    transition: 1s ease-in-out;
+}
+
+.configs h3 box-icon:hover {
+    fill: var(--gray);
+    background-color: var(--blueGray);
+}
+
+.configs h6 {
+    margin-top: 36px;
+    margin-left: 36px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.configs .tempos {
+    margin-top: 16px;
+    display: flex;
+    gap: 16px;
+    padding: 0 36px;
+    margin-bottom: 36px;
+    position: relative;
+}
+
+.configs .tempos .tempo {
+    flex: 1;
+}
+.configs .tempos .tempo span {
+    display: block;
+    color: var(--blueGray);
+    font-weight: bold;
+}
+
+.configs .tempos .tempo input {
+    border-radius: 5px;
+    padding-left: 10px;
+    height: 40px;
+    width: 100%;
+    margin-top: 6px;
+    outline-color: #F77070;
+    background-color: var(--gray);
+}
+
+.configs button {
+    height: 46px;
+    padding: 0 26px;
+    background-color: var(--salmom);
+    color: var(--darkBlue);
+    border-radius: 25px;
+    color: var(--darkerBlue);
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    bottom: -23px;
+    left: 50%;
+    transform: translateX(-50%);
 }
