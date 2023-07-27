@@ -1,5 +1,23 @@
 console.log("Hello World!");
 
+let seconds = 0;
+let minutes = 0;
+
+const screen = {
+    w: window.innerWidth,
+    h: window.innerHeight,
+}
+
+const canvas = document.getElementById("canvasEve").getContext("2d");
+function draw () {
+    let secondsToAngle = seconds / 30 ;
+    canvas.beginPath();
+    canvas.fillStyle = 'white';
+    canvas.arc(95, 50, 40, 0, Math.PI * secondsToAngle);
+    canvas.stroke();
+}
+const clockLine = {}
+
 let ul = document.querySelector('ul');
 let lis = document.querySelectorAll(`li`);
 
@@ -49,14 +67,14 @@ state.onclick = function () {
 }
 
 function contaSegundos() {
-    let segundos = 0;
-    let minutos = 0;
     setInterval(function () {
-        if (segundos < 59) {
-            segundos++;
-            hora.innerHTML = segundos;
-        }else{
-            segundos = 0;
+        if (seconds < 59) {
+            seconds++;
+            hora.innerHTML = seconds;
+        } else {
+            seconds = 0;
         }
+        draw();
+        console.log(seconds);
     }, 1000)
 }

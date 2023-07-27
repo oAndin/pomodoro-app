@@ -8,6 +8,7 @@
     text-decoration: none;
     box-sizing: border-box;
     font-family: 'Nunito', sans-serif;
+    user-select: none;
 }
 
 
@@ -16,7 +17,9 @@
     --darkBlue: #1E2140;
     --darkerBlue: #121325;
     --salmom: #F77070;
+    --secondSalmom: #aa4d4d;
     --gray: #D5DEFE;
+    --lightGray: #ffffff;
     --blueGray: #797c9b;
     --left: 8px;
 }
@@ -67,7 +70,7 @@ body {
     left: var(--left);
     border-radius: 35px;
     background-color: var(--salmom);
-    transition-duration: 0.5s;
+    transition: 0.5s ease-in-out;
 }
 
 #pomodoro ul li {
@@ -79,6 +82,13 @@ body {
     font-weight: bold;
     position: relative;
     z-index: 1;
+    transition: 0.5s ease-in-out;
+    border-radius: 35px;
+}
+
+#pomodoro ul li:hover:not(.active) {
+    color: var(--salmom);
+    background-color: var(--primary);
 }
 
 #pomodoro ul li.active {
@@ -243,3 +253,12 @@ body {
     left: 50%;
     transform: translateX(-50%);
 }
+
+/* canvas {
+    position: absolute;
+    z-index: 50;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    border: 3px solid var(--salmom);
+}  */
